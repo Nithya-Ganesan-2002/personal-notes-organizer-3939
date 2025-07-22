@@ -1,0 +1,101 @@
+:root {
+  --todo-card-bg: #faf3e5;
+  --todo-card-border: #33302e;
+  --todo-card-shadow: 12px 12px 0px #33302e44;
+  --todo-border-radius: 24px;
+  --todo-spacing: 24px;
+  --todo-label-color: #322016;
+  --todo-label-completed: #888888;
+  --todo-checkbox-size: 28px;
+  --todo-checkbox-border: #322016;
+  --todo-checkbox-bg: #fff0ee;
+  --todo-checkbox-completed-bg: #f6a37d;
+  --todo-checkbox-completed-border: #b6835e;
+  --todo-checkbox-shadow: 2px 2px 0px #33302e44;
+  --todo-strikethrough: line-through;
+  --todo-list-padding: 0;
+  --todo-list-margin: 0;
+}
+
+.todo-card {
+  background: var(--todo-card-bg);
+  border: 4px solid var(--todo-card-border);
+  border-radius: var(--todo-border-radius);
+  box-shadow: var(--todo-card-shadow);
+  padding: 32px 0;
+  max-width: 606px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 46px;
+}
+
+.todo-title {
+  color: var(--todo-label-color);
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin: 0 0 8px 0;
+  text-align: center;
+}
+
+.todo-line {
+  height: 0; width: 100%;
+  border: none;
+  border-top: 4px solid var(--todo-card-border);
+  margin: 0 0 16px 0;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--todo-spacing);
+  width: 543px;
+  padding: var(--todo-list-padding);
+  margin: var(--todo-list-margin);
+}
+
+.todo-row {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+  height: 28px;
+}
+
+.todo-label {
+  color: var(--todo-label-color);
+  font-size: 1.15rem;
+  font-weight: 400;
+}
+
+.todo-label.completed {
+  color: var(--todo-label-completed);
+  text-decoration: var(--todo-strikethrough);
+}
+
+.todo-checkbox {
+  width: var(--todo-checkbox-size);
+  height: var(--todo-checkbox-size);
+  border: 3px solid var(--todo-checkbox-border);
+  border-radius: 6px;
+  background: var(--todo-checkbox-bg);
+  box-shadow: var(--todo-checkbox-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.todo-checkbox.completed {
+  background: var(--todo-checkbox-completed-bg);
+  border: 3px solid var(--todo-checkbox-completed-border);
+}
+
+.todo-checkbox-tick {
+  width: 20px; height: 14px;
+  border-bottom: 3px solid #faf3e5;
+  border-left: 3px solid #faf3e5;
+  position: absolute;
+  left: 4px; top: 4px;
+  transform: rotate(-40deg);
+}
