@@ -294,11 +294,37 @@ function App() {
         )}
       </main>
       {/* Floating Add Button */}
+      {/* Floating Add Button */}
       <button
         className="notes-add-fab"
         aria-label="Add note"
         title="New note"
-        onClick={handleAddNote}
+        onClick={() => {
+          // Always open add form and close editors for clean UX, ignore if already open
+          setIsAdding(true);
+          setIsEditing(false);
+          setSelectedId(null);
+        }}
+        style={{
+          position: "fixed",
+          right: 54,
+          bottom: 58,
+          background: "var(--accent)",
+          color: "#322016",
+          border: "none",
+          borderRadius: "50%",
+          boxShadow: "0 4px 24px #fc3e0a25",
+          width: 68,
+          height: 68,
+          fontSize: "2.4rem",
+          fontWeight: 600,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          cursor: "pointer",
+          transition: "box-shadow 0.18s, background 0.22s",
+          zIndex: 3,
+        }}
       >
         +
       </button>
