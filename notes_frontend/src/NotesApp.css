@@ -11,10 +11,25 @@
   padding: 0.64em 1.60em;
   margin-right: 0.7em;
   box-shadow: 0 2px 16px #5f8bea1a;
-  transition: background 0.18s, color 0.16s, box-shadow 0.18s;
   outline: none;
   cursor: pointer;
+  /* Enhance transitions for smooth 3D/pressed animation */
+  transition: 
+    background 0.18s, 
+    color 0.16s, 
+    box-shadow 0.18s,
+    transform 0.11s cubic-bezier(.37,1.99,.61,.6);
 }
+
+/* 3D effect: depression on click */
+.notes-listall-btn:active,
+.notes-listall-add:active {
+  /* visually depress into surface, reduce shadow, slight scale */
+  transform: translateY(3px) scale(0.97);
+  box-shadow: 0 1px 2px #1976d255, 0 1px 1px #32201622;
+  filter: brightness(96%);
+}
+
 .notes-listall-btn.active {
   outline: 2px solid #fbc02d;
   background: linear-gradient(90deg, #1976d2 80%, #fbc02d 100%);
